@@ -11,7 +11,7 @@
 
 ### 2. Login portal
 - There is an individual page for patients, doctors and admin each.
-- accesses the login databases aupon selecting 'Enter'.
+- accesses the login databases upon selecting 'Enter'.
 
 ### 3. Appointments
 - Here, based on who accessed it , appointments can be **created** _(patients)_, **approved** _(admin)_, or **deleted** _(patient or admin)_.
