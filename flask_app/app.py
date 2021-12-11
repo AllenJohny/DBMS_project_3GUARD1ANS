@@ -158,7 +158,7 @@ def patienthome():
     if request.method=='POST':
         if request.form.get('records')=='records':
             task_pat = 1
-            return redirect(url_for('addmedical'))
+            return redirect(url_for('addappointmentpat'))
         if request.form.get('appointment')=='appointment':
             task_pat=2
             return redirect(url_for('seeappoint'))
@@ -168,19 +168,38 @@ def patienthome():
 
     return render_template('patient_home.html' , name1 = nam , data = data)
 
+
+
 @app.route('/addappointment',methods=['GET','POST'])
 def addappointment():
     if task_doc==1:
         if request.method=='POST':
             if request.form.get('appoint')=='appoint':
                 naam = request.form['naam']
-                tareek = request.form['tareek']
-                mahina = request.form['mahina']
-                ghanta = request.form['ghanta']
+                date = request.form['date']
+                month = request.form['month']
+                hour = request.form['hour']
                 minutes = request.form['minutes']
-                post = {'doctor':user_d , 'patient':naam , 'date':tareek , 'month':mahina , 'hour':ghanta , 'minutes':minutes}
+                #dname=db.doctors_details.find({"username":user_d},{"name":1,"_id":0})
+                post = {'doctor':nam , 'patient':naam , 'date':date , 'month':month , 'hour':hour , 'minutes':minutes}
                 postID = db.appointment.insert_one(post).inserted_id
         return render_template('add_appointment.html')
+
+        
+@app.route('/addappointmentpat',methods=['GET','POST'])
+def addappointmentpat():
+    if task_pat==1:
+        if request.method=='POST':
+            if request.form.get('appoint')=='appoint':
+                naam = request.form['naam']
+                date = request.form['date']
+                month = request.form['month']
+                hour = request.form['hour']
+                minutes = request.form['minutes']
+                #dname=db.doctors_details.find({"username":user_d},{"name":1,"_id":0})
+                post = {'doctor':naam , 'patient':nam , 'date':date , 'month':month , 'hour':hour , 'minutes':minutes}
+                postID = db.appointment.insert_one(post).inserted_id
+        return render_template('add_appointmentpat.html')
 
 @app.route('/adddata',methods=['GET','POST'])
 def adddata():
@@ -189,8 +208,8 @@ def adddata():
             if request.form.get('data')=='data':
                 description = request.form['description']
                 Pname = request.form['Pname']
-                saal = request.form['saal']
-                post = {'doctor':nam , 'description':description , 'patient':Pname , 'year':saal}
+                year = request.form['saal']
+                post = {'doctor':nam , 'description':description , 'patient':Pname , 'year':year}
                 postID = db.medical_history.insert_one(post).inserted_id
         return render_template('add_data.html')
 
@@ -207,8 +226,8 @@ def addmedical():
             if request.form.get('data')=='data':
                 disease = request.form['disease']
                 mont = request.form['mont']
-                saal = request.form['saal']
-                post = {'patient':user_p , 'disease':disease , 'month':mont , 'year':saal}
+                year = request.form['saal']
+                post = {'patient':user_p , 'disease':disease , 'month':mont , 'year':year}
                 postID = db.medical_history.insert_one(post).inserted_id
         return render_template('add_data.html')
     return render_template('add_medicalHistory.html')
@@ -216,7 +235,7 @@ def addmedical():
 @app.route('/seeappoint',methods = ['GET','POST'])
 def seeappoint():
     if task_pat==2:
-        data3 = db.appointment.find({"patient":user_p})
+        data3 = db.appointment.find({"patient":nam})
         return render_template('see_appoint_pat.html',data3 = data3)
 @app.route('/seedoc',methods = ['GET','POST'])
 def seedoc():
