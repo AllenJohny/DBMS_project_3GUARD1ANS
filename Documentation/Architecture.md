@@ -37,4 +37,3 @@
    - _patient id, patient name, prescriptions, doctor id, doctor name, date._
 
 
-
