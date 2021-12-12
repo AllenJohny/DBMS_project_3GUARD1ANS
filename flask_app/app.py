@@ -24,6 +24,13 @@ db = client.medicords
 
 @app.route('/',methods=['GET','POST'])
 def homepage():
+    if request.method=='POST':
+            if request.method('PATIENT')=='PATIENT':
+                return redirect(url_for('patient'))
+
+            elif request.form.get('DOCTOR')=='DOCTOR':
+                task = 1
+                return redirect(url_for('login'))
     return render_template('homepage.html')
 
 
@@ -50,10 +57,12 @@ def main():
 
 @app.route('/login',methods=['GET','POST'])
 def login():
+    task=1
     if task == 1:
         collection = db.doctors_details
         if request.form.get('signup')=='signup':
             name = request.form['name']
+            sname=request.form['sname']
             email = request.form['email']
             phone = request.form['phone']
             spec = request.form['specialization']
@@ -66,7 +75,7 @@ def login():
                     flag=1
                     break
             if flag ==0:
-                post = {'name':name , 'email':email , 'phone':phone , 'spec':spec , 'username':username_new , 'password':password_new}
+                post = {'name':name , 'sname': sname ,'email':email , 'phone':phone , 'spec':spec , 'username':username_new , 'password':password_new}
                 postID = db.doctors_details.insert_one(post).inserted_id
                 emp = db.doctors_details.find()
             return render_template('login.html')
@@ -92,11 +101,13 @@ def login():
 
 @app.route('/patient',methods=['GET','POST'])
 def patient():
+    task=2
     if task == 2:
 
         collection = db.patient_details
         if request.form.get('signup')=='signup':
             name = request.form['name']
+            sname = request.form['sname']
             email = request.form['email']
             phone = request.form['phone']
             username_new = request.form['username_new']
@@ -108,7 +119,7 @@ def patient():
                     flag=1
                     break
             if flag ==0:
-                post = {'name':name , 'email':email , 'phone':phone ,  'username':username_new , 'password':password_new}
+                post = {'name':name ,'sname':sname, 'email':email , 'phone':phone ,  'username':username_new , 'password':password_new}
                 postID = db.patient_details.insert_one(post).inserted_id
                 emp = db.patient_details.find()
 
@@ -147,7 +158,7 @@ def doctorhome():
             return redirect(url_for('adddata'))
         if request.form.get('see_medical_data')=='see_medical_data':
             task_doc=3
-            return redirect(url_for('seedata'))
+            return redirect(url_for('searchp'))
     return render_template('doctor_home.html',name1 =nam , data1 = data1)
 
 
@@ -211,9 +222,19 @@ def adddata():
                 postID = db.medical_history.insert_one(post).inserted_id
         return render_template('add_data.html')
 
+@app.route('/searchp',methods=['GET','POST'])
+def searchp():
+    if task_doc==3:
+        if request.method=='POST':
+            if request.form.get('enter')=='enter':
+                global pname
+                pname=request.form['pname'] 
+                return redirect(url_for('seedata'))
+    return render_template('searchp.html')
+
 @app.route('/seedata',methods=['GET','POST'])
 def seedata():
-    data2 = db.medical_history.find()
+    data2 = db.medical_history.find({"patient":pname})
     if task_doc==3:
         return render_template('see_data.html' , data2 = data2)
 
@@ -247,7 +268,7 @@ def seedoc():
             return render_template('seedoc.html',data4 = data4)
         return render_template('seedoc.html',data4 = data4)
 
-        
+
 if __name__=='__main__':
     task = 0
     app.run(debug=True)

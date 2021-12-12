@@ -1,42 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MEDIREC</title>
-</head>
-<body>
-    <nav>
-        <div class="menu">
-            <div class="logo">
-                <a href="#">MEDREC</a>
-            </div>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="About">About</a></li>
-                <li><a href="Contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-    <div class="body">
-        <h2>Welcome to MedRec</h2>
-        
-        <form action = "http://localhost:5000/home" method="GET">
-            <div class="signup">
-                <button class="btn btn-outline-success my-2 my-sm-0" name = "DOCTOR" value = 'DOCTOR' type="submit" >Login/Signup</button>
-            </div>
-        </form>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet tenetur repudiandae ducimus quo harum animi sint iure, veritatis repellat, velit quod magnam! Veniam voluptates maiores iste quia laboriosam ipsam dolores.</p>
+<html lang ="en">
 
-        </form>
+<head>
+  <title>MEDICORD</title>
+  <meta charset = "utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="short description of this html page">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ url_for ('static' , filename='style.css')}}">
+</head>
+
+<body class = "body">
+
+  <nav>
+    <div class="menu">
+        <div class="logo">
+            <a href="#">MEDREC</a>
+        </div>
+        <ul >
+            <li><a href="#">Home</a></li>
+            <li><a href="About">About</a></li>
+            <li><a href="Contact">Contact</a></li>
+        </ul>
     </div>
-    <div class="doctor">
-        <form method="POST">
-            <div class="login">
-                <button class="btn btn-outline-success my-2 my-sm-0" name = "PATIENT" value = "PATIENT" type="submit" >Login</button>
-            </div>
-    </div>
+</nav>
+  <h1 class="heading" style = "font-size:04vw"><center>WELCOME TO MEDREC</center></h1>
+  <p class="desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero unde nemo, asperiores necessitatibus debitis recusandae exercitationem at quia voluptatem officiis nihil. Deserunt, dolore! Eveniet iusto labore quo, nobis dolores vero!</p>
+    <form action="http://localhost:5000/patient" method = 'POST'>
+      <div class = "patient">
+        <button class="btn btn-outline-success my-2 my-sm-0" name = "PATIENT" value = 'PATIENT' type="submit">Login/Signup</button>
+      </div>
+    </form>
+
+     <p class="doc">Doctor?</p>
+    <div class="foot">
      
+      <form action="http://localhost:5000/login" method="POST">
+        <button class="btn btn-outline-success my-2 my-sm-0" name = "DOCTOR" value = "DOCTOR" type="submit" >Login</button>
+      </form>
+    </div>
 </body>
 </html>
