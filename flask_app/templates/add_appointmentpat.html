@@ -9,6 +9,29 @@
 <link rel="stylesheet" href="{{url_for('static',filename = "style.css")}}">
 </head>
 <body class = "body">
+
+  <center><h2>DOCTOR AVAILABILITY</h2></center><br><br>
+
+  <center>
+    <table border="1" cellpadding = "5" cellspacing = "5">
+      <tr>
+        <td><b><h5>    Doctor      </h5> </b></td>
+        <td><b><h5>    Specialization      </h5> </b></td>
+        <td><b><h5>    Available status      </h5> </b> </td>
+        <td><b><h5>    Time     </h5> </b> </td>
+  {% for emp in data4 %}
+  <tr>
+    <td>{{ emp['doctor'] }}</td></h4>
+    <td>{{ emp['specialization'] }}</td></h4>
+    <td>{{ emp ['status']  }}</td></h4>
+    <td>{{ emp['time'] }}</td></h4>
+  </tr>
+  {% endfor %}
+
+  </table>
+  </center>
+
+
 <div class = 'centered'>
 <form method = 'POST'>
   NAME OF DOCTOR:<br>
@@ -17,18 +40,12 @@
   DATE:<br>
   <input type="text" class = "form-control" name="date">
   <br>
-  MONTH:<br>
-  <input type="text" class = "form-control" name="month">
-  <br>
-  Time in 24 hour format (hour):<br>
-  <input type="text" class = "form-control" name="hour">
-  <br>
-  Time in 24 hour format (minutes):<br>
-  <input type="text" class = "form-control" name="minutes">
+  Time<br>
+  <input type="text" class = "form-control" name="time">
   <br>
 
   <br>
-  <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name = "appoint" value = "appoint">ADD APPOINTMENT </button>
+  <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name = "appoint" value = "appoint">MAKE APPOINTMENT </button>
 
 </form>
 <form action = "http://localhost:5000/patienthome" method = 'POST'>

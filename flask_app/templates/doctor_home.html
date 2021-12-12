@@ -33,7 +33,7 @@
         </form>
   </div>
   <div class="cust">
-    <form action = "http://localhost:5000/" method = 'POST'>
+    <form action = "http://localhost:5000/" method = 'GET'>
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name = "back" value = "back">LOGOUT</button>
     </form>
   </div>
@@ -44,17 +44,12 @@
       <tr>
         <td><b><h5> Patient </h5> </b></td>
         <td><b><h5> Date </h5> </b> </td>
-        <td><b><h5> Month </h5> </b> </td>
-        <td><b><h5> Hour </h5> </b> </td>
-
-        <td><b><h5> Minute </h5></b></td></tr>
+        <td><b><h5> Time </h5> </b> </td>
   {% for emp in data1 %}
   <tr>
     <td>{{ emp['patient'] }}</td></h4>
     <td>{{ emp ['date']  }}</td></h4>
-    <td>{{ emp['month'] }}</td></h4>
-    <td>{{ emp['hour'] }}</td></h4>
-    <td>{{ emp['minutes'] }}</td></h4>
+    <td>{{ emp['time'] }}</td></h4>
   </tr>
   {% endfor %}
 
