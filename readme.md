@@ -1,4 +1,4 @@
-# Medical History and Appoinments web application
+# Medical history and Appoinments web application
 
 ## About
 
