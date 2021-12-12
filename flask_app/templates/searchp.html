@@ -1,0 +1,28 @@
+<html lang ="en">
+
+<head>
+  <title>MEDREC</title>
+  <meta charset = "utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="short description of this html page">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ url_for ('static' , filename='style.css')}}">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <!-- Brand -->
+    <a class="navbar-brand" href="#">MEDREC </a>
+
+  </nav>
+
+  <div class = "centered">
+  <form method ="POST">
+  ENTER PATIENT NAME:<br>
+  <input type="text" class = "form-control" name="pname">
+  <br>
+  <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name = "enter" value = "enter">Enter </button>
+  </form>
+  </div>
+  </body>
+  </html>
