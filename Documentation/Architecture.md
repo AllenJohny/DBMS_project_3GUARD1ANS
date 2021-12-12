@@ -35,5 +35,5 @@
    - _patient id, doctor id, time, hospital._
 - **Medical History** (for each patient)
    - _patient id, patient name, prescriptions, doctor id, doctor name, date._
-
+- **Availability**
 

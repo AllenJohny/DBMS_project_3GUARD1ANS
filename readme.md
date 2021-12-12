@@ -32,4 +32,4 @@
 
 - ##### python run.py
 
-- ##### Then open [ localhost:5000/home ](http://localhost:5000/home )  in your browser
+- ##### Then open [ localhost:5000/ ](http://localhost:5000/ )  in your browser
