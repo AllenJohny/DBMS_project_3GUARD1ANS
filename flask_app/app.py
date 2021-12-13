@@ -255,7 +255,19 @@ def addmedical():
 def seeappoint():
     if task_pat==2:
         data3 = db.appointment.find({"patient":nam})
+        if request.method=='POST':
+            if request.form.get('delete')=='delete':
+                doctor=request.form['doctor']
+                date=request.form['date']
+                time=request.form['time']
+                db.appoinment.deleteOne({"doctor":doctor,"date":date,"time":time})
         return render_template('see_appoint_pat.html',data3 = data3)
+
+
+
+
+
+
 @app.route('/seedoc',methods = ['GET','POST'])
 def seedoc():
     if task_pat==3:
