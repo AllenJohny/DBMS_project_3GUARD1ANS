@@ -147,3 +147,33 @@ nav .menu{
   text-align: center;
 }
 
+.red {
+  color: rgb(172, 6, 6);
+  background-color: rgb(252, 252, 252);
+  border-radius: 5px;
+}
+
+.red:hover{
+  background: rgb(168, 6, 6);
+  color: #f1ecec;
+}
+
+.logout{
+  position: absolute;
+  bottom: 0%;
+  left: 80%;
+  color: #08eb1b;
+  background-color: ghostwhite;
+  border-radius: 10px;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-family:cursive;
+}
+
+.buts {
+  position: absolute;
+  top: 7%;
+  left: 60%;
+  transform: translate(-5%, -5%);
+  text-align: center;
+}

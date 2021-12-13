@@ -148,7 +148,7 @@ def patient():
 def doctorhome():
     global task_doc
     task_doc = 0
-    data1 = db.appointment.find({"doctor":nam})
+    data1 = db.appointment.find({"doctor":nam})   #.sort([("date", pymongo.ASCENDING), ("time", pymongo.DESCENDING)])
     if request.method=='POST':
         if request.form.get('addappointment')=='addappointment':
             task_doc=1
