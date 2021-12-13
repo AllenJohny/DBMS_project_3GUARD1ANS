@@ -25,11 +25,14 @@
         <td><b><h5> DATE</h5> </b> </td>
         <td><b><h5> TIME</h5> </b> </td>
   {% for emp in data3 %}
-  <tr>
+    <tr>
     <td>{{ emp['doctor'] }}</td></h4>
     <td>{{ emp['date'] }}</td></h4>
-    <td>{{ emp['time'] }}</td></h4>
-  </tr>
+    <td>{{ emp['time'] }}</td></h4>  
+    <td><form method='POST'><button class="red" type="submit" name = "delete" value = "delete">Delete appointment</button>
+    </form>
+    </td>
+    </tr>
   {% endfor %}
 
   </table>
