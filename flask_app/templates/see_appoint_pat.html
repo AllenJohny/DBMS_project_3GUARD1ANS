@@ -1,0 +1,44 @@
+<html lang ="en">
+
+<head>
+  <title>MEDREC</title>
+  <meta charset = "utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="short description of this html page">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ url_for ('static' , filename='style.css')}}">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <!-- Brand -->
+    <a class="navbar-brand" href="#">MEDREC</a>
+
+  </nav>
+
+  <center><h2>YOUR APPOINTMENTS</h2></center><br><br>
+
+  <center>
+    <table border="2" cellpadding = "8" cellspacing = "8">
+      <tr>
+        <td><b><h5> DOCTOR</h5> </b></td>
+        <td><b><h5> DATE</h5> </b> </td>
+        <td><b><h5> TIME</h5> </b> </td>
+  {% for emp in data3 %}
+    <tr>
+    <td>{{ emp['doctor'] }}</td></h4>
+    <td>{{ emp['date'] }}</td></h4>
+    <td>{{ emp['time'] }}</td></h4>  
+    </tr>
+  {% endfor %}
+
+  <form method='POST'><button class="red" type="submit" name = "delete" value = "delete">DELETE APPOINTMENT</button>
+  </form>
+
+  </table>
+</center>
+  <form action = "http://localhost:5000/patienthome" method = 'POST'>
+    <button class="back" type="submit" name = "back" value = "back">BACK </button>
+  </form>
+</body>
+</html>
