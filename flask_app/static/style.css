@@ -1,0 +1,227 @@
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 50px;
+}
+
+.half {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 10%;
+  overflow-x: hidden;
+  padding-top: 50px;
+}
+
+/* Control the left side */
+.left {
+  left: 0;
+
+}
+
+/* Control the right side */
+.right {
+  right: 0;
+
+}
+
+.vr{
+  width:5px;
+  top : 15%;
+  bottom :0;
+  background-color: #24c01f;
+  position: absolute;
+  left: 0px;
+}
+
+/* If you want the content centered horizontally and vertically */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+
+.cust {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+nav{
+  position: fixed;
+  background: #4CAF50;
+  width: 100%;
+  padding: 5px 0;
+  z-index: 12;
+}
+nav .menu{
+  max-width: 1250px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+.menu .logo a{
+  text-decoration: none;
+  color: #fff;
+  font-size: 35px;
+  font-weight: 600;
+}
+.menu ul{
+  display: inline-flex;
+}
+.menu ul li{
+  list-style: none;
+  margin-left: 7px;
+}
+.menu ul li:first-child{
+  margin-left: 0px;
+}
+.menu ul li a{
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+.menu ul li a:hover{
+  background: #fff;
+  color: #4CAF50;
+}
+
+.heading{
+  position: absolute;
+  top: 13%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  
+}
+
+.desc {
+  font-size: medium;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+
+.patient{
+  position: absolute;
+  top: 23%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+}
+
+.doc{
+  position: absolute;
+  bottom: 8%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+}
+
+.foot {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.red {
+  position: absolute;
+  bottom: 15%;
+  left:13%;
+  width: 140px;
+  height: 75px;
+  color: rgb(172, 6, 6);
+  background-color: rgb(252, 252, 252);
+  border-radius: 5px;
+}
+
+.red:hover{
+  background: rgb(168, 6, 6);
+  color: #f1ecec;
+}
+
+.logout{
+  position: absolute;
+  bottom: 10%;
+  left: 80%;
+  color: #08eb1b;
+  background-color: ghostwhite;
+  border-radius: 10px;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-family:cursive;
+}
+
+.buts {
+  position: absolute;
+  top: 7%;
+  left: 60%;
+  transform: translate(-5%, -5%);
+  text-align: center;
+}
+
+.back {
+  position: absolute;
+  bottom: 15%;
+  left:75%;
+  width: 140px;
+  height: 75px;
+  border-radius: 5px;
+  color: #4caf50;
+  background-color: rgb(252, 251, 250);
+}
+
+.back:hover{
+  background-color: #4caf50;
+  color: rgb(252, 251, 250);
+
+}
+
+.lt {
+  position: absolute;
+  top:40%;
+  right:63%;
+  transform: translate(-90%, -30%);
+  text-align: center;
+}
+
+.rt {
+  position: absolute;
+  top:40%;
+  right:20%;
+  transform: translate(-90%, -30%);
+  text-align: center;
+
+}
+
+.vdr {
+  width:5px;
+  top : 12%;
+  bottom :0;
+  background-color: #24c01f;
+  position: absolute;
+  left: 500px;
+}
