@@ -28,12 +28,12 @@
 
  ## _Tables_
 - **Patient_login**   
-   - name,surname,username, password._
+   - _name,surname,username, password._
 - **Doctor_login**
-   - name,surname,specialization, username, password.__
+   - _name,surname,specialization, username, password._
 - **Appointments**
-   - patient name, doctor name, time,date._
+   - _patient name, doctor name, time,date._
 - **Medical History** (for each patient)
-   -  patient name, prescriptions, doctor name, date._
+   - _patient name, prescriptions, doctor name, date._
 - **Availability**
 
