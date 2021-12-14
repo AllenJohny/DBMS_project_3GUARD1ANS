@@ -159,6 +159,9 @@ def doctorhome():
         if request.form.get('see_medical_data')=='see_medical_data':
             task_doc=3
             return redirect(url_for('searchp'))
+        if request.form.get('delete')=='delete':
+            task_doc=4
+            return redirect(url_for('delappoint_doc'))
     return render_template('doctor_home.html',name1 =nam , data1 = data1)
 
 
@@ -257,13 +260,34 @@ def seeappoint():
         data3 = db.appointment.find({"patient":nam})
         if request.method=='POST':
             if request.form.get('delete')=='delete':
-                doctor=request.form['doctor']
-                date=request.form['date']
-                time=request.form['time']
-                db.appoinment.deleteOne({"doctor":doctor,"date":date,"time":time})
+                return redirect(url_for('delappoint'))                
         return render_template('see_appoint_pat.html',data3 = data3)
 
 
+
+@app.route('/delappoint',methods=['GET','POST'])
+def delappoint():
+    if task_pat==2:
+        data3 = db.appointment.find({"patient":nam})
+        if request.method=='POST':
+            if request.form.get('del')=='del':
+                doctor=request.form['doctor']
+                date=request.form['date']
+                time=request.form['time']
+                db.appointment.delete_one({"doctor":doctor,"patient":nam,"date":date,"time":time})
+        return render_template('del_appoint_pat.html',data3 = data3)
+
+@app.route('/delappoint_doc',methods=['GET','POST'])
+def delappoint_doc():
+    if task_doc==4:
+        data1 = db.appointment.find({"doctor":nam})
+        if request.method=='POST':
+            if request.form.get('del')=='del':
+                patient=request.form['patient']
+                date=request.form['date']
+                time=request.form['time']
+                db.appointment.delete_one({"doctor":nam,"patient":patient,"date":date,"time":time})
+        return render_template('del_appoint_doc.html',data1 = data1)
 
 
 
