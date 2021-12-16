@@ -10,16 +10,18 @@
 </head>
 <body class = "body">
 
-  <center><h2>DOCTOR AVAILABILITY</h2></center><br><br>
+  <h3 class="head"><center>MEDREC</center></h3>
+  <br>
+  <center><h4>Availabilities</h4></center><br>
 
   <center>
     <table border="1" cellpadding = "5" cellspacing = "5">
       <tr>
-        <td><b><h5>    Doctor      </h5> </b></td>
-        <td><b><h5>    Specialization      </h5> </b></td>
-        <td><b><h5>    Available status      </h5> </b> </td>
-        <td><b><h5>    Time     </h5> </b> </td>
-  {% for emp in data4 %}
+        <td><p><b>Doctor</b></p></td>
+        <td><p><b>Specialization</b></p></td>
+        <td><p><b>Availability</b></p></td>
+        <td><p><b>Time</b></p></td> 
+         {% for emp in data4 %}
   <tr>
     <td>{{ emp['doctor'] }}</td></h4>
     <td>{{ emp['specialization'] }}</td></h4>
@@ -29,29 +31,29 @@
   {% endfor %}
 
   </table>
-  </center>
-
-
-<div class = 'centered'>
+  <br>
+<div>
 <form method = 'POST'>
-  NAME OF DOCTOR:<br>
+  <p><b>Name of the Doctor</b></p>
   <input type="text" class = "form-control" name="naam">
   <br>
-  DATE:<br>
+  <p><b>Date</b></p>
   <input type="text" class = "form-control" name="date">
   <br>
-  Time<br>
+  <p><b>Time</b></p>
   <input type="text" class = "form-control" name="time">
   <br>
 
   <br>
   <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name = "appoint" value = "appoint">MAKE APPOINTMENT </button>
-
+  
 </form>
+<br>
 <form action = "http://localhost:5000/patienthome" method = 'POST'>
   <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name = "back" value = "back">BACK </button>
 </form>
 
 </div>
+</center>
 </body>
 </html>

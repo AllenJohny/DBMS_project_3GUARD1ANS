@@ -10,49 +10,46 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-    <!-- Brand -->
-    <a class="navbar-brand" href="#">MEDREC</a>
-
-  </nav>
-
-  <center><h2>APPOINTMENTS</h2></center><br><br>
-
-  <center>
-    <div class = "vdr"></div>
-    <table border="5" cellpadding = "30" cellspacing = "30">
+  <h3 class="head"><center>MEDREC</center></h3>
+  <br>
+  <div>
+    <center>
+    <table border = "2" cellpadding = "30" cellspacing = "30">
       <tr>
-        <td><b><h5> DOCTOR</h5> </b></td>
-        <td><b><h5> DATE</h5> </b> </td>
-        <td><b><h5> TIME</h5> </b> </td>
-  {% for emp in data3 %}
-    <tr>
-    <td>{{ emp['doctor'] }}</td></h4>
-    <td>{{ emp['date'] }}</td></h4>
-    <td>{{ emp['time'] }}</td></h4>  
-    </td>
+        <td><b><p> DOCTOR</p> </b></td>
+        <td><p><b>DATE</b></p></td>
+        <td><p><b>TIME</b></p> </td>
+        {% for emp in data3 %}
+      <tr>
+        <td>{{ emp['doctor'] }}</td></h4>
+        <td>{{ emp['date'] }}</td></h4>
+        <td>{{ emp['time'] }}</td></h4>  
+        </td>
+      </tr>
+      {% endfor %}
     </tr>
-  {% endfor %}
+    <form method="POST">
+        <div>
+        <p><b>Enter Doctor Name:</b></p>
+        <input type="text" class = "form-control" name="doctor">
+        <br>
 
+        <p><b>Enter Time:</b></p>
+        <input type="text" class = "form-control" name="time">
+        <br>
+
+        <p><b>Enter Date:</b></p>
+        <input type="text" class = "form-control" name="date">
+        <br>
+      </div>
+    </form>
+  </center>
+  </div>
   <form method="POST">
-  <div class = 'lt'>
-  ENTER DOCTOR NAME:<br>
-  <input type="text" class = "form-control" name="doctor">
-  <br>
-
-  ENTER TIME:<br>
-  <input type="text" class = "form-control" name="time">
-  <br>
-
-  ENTER DATE:<br>
-  <input type="text" class = "form-control" name="date">
-  <br>
- </div>
-  <button class="red" type="submit" name = "del" value = "del">DELETE APPOINTMENT</button>
+    <button class="red" type="submit" name = "del" value = "del">DELETE APPOINTMENT</button>
   </form>
 
   </table>
-  </center>
   <form action = "http://localhost:5000/patienthome" method = 'POST'>
     <button class="back" type="submit" name = "back" value = "back">BACK </button>
   </form>

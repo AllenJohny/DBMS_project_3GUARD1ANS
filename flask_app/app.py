@@ -51,9 +51,14 @@ def main():
      elif request.method=='GET':
           return render_template('index.html')
      print('hello')
+      
+@app.route('/about', methods=['GET', 'POST'])
+def about():
+    return render_template('about.html')
 
-
-
+@app.route('/contact', methods=['GET', 'POST'])
+def contact():
+    return render_template('contact.html')
 
 @app.route('/login',methods=['GET','POST'])
 def login():

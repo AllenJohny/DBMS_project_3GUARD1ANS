@@ -9,30 +9,26 @@
 <link rel="stylesheet" href="{{url_for('static',filename = "style.css")}}">
 </head>
 <body class = "body">
+  <h3 class="head"><center>MEDREC</center></h3>
+  <br><br>
 
-  <div class = 'centered'>
+  <center>
     <form method = 'POST'>
-      Description:<br>
+      <p><b>Description:</b></p>
         <input type="text" class = "form-control" name="disease">
         <br>
-      Doctor:<br>
+      <p><b>Doctor:</b></p>
         <input type="text" class = "form-control" name="mont">
         <br>
-      Year:<br>
+      <p><b>Year:</b></p>
         <input type="text" class = "form-control" name="saal">
-        <br>
         <br>
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name = "data" value = "data">ADD DATA </button>
     </form>
-    <div class='centered'>
     <form action = "http://localhost:5000/doctorhome" method = 'POST'>
       <button class="back" type="submit" name = "back" value = "back">BACK </button>
     </form>
-    </div>
-
-  </div>
-
-
+  </center>
 
 
 </body>

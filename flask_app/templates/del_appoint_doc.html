@@ -10,20 +10,17 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-    <!-- Brand -->
-    <a class="navbar-brand" href="#">MEDREC</a>
+  <h3 class="head"><center>MEDREC</center></h3>
+  <br>
 
-  </nav>
-
-  <center><h2>YOUR APPOINTMENTS</h2></center><br><br>
+  <center><h2>Appointments</h2></center><br><br>
 
   <center>
     <table border="1" cellpadding = "5" cellspacing = "5">
       <tr>
-        <td><b><h5> PATIENT</h5> </b></td>
-        <td><b><h5> DATE</h5> </b> </td>
-        <td><b><h5> TIME</h5> </b> </td>
+        <td><p><b>Patient</b></p></td>
+        <td><p><b>Date</b></p></td>
+        <td><p><b>Time</b></p></td>
   {% for emp in data1 %}
     <tr>
     <td>{{ emp['patient'] }}</td></h4>
@@ -34,15 +31,15 @@
   {% endfor %}
 
   <form method="POST">
-  ENTER PATIENT NAME:<br>
+  <p><b>Enter the Patient Name</b></p>
   <input type="text" class = "form-control" name="patient">
   <br>
 
-  ENTER TIME:<br>
+  <p><b>Enter Time</b></p>
   <input type="text" class = "form-control" name="time">
   <br>
 
-  ENTER DATE:<br>
+  <p><b>Enter Date</b></p>
   <input type="text" class = "form-control" name="date">
   <br>
  

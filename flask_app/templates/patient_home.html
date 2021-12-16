@@ -10,17 +10,13 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-    <!-- Brand -->
-    <a class="navbar-brand" href="#">MEDREC </a>
-
-  </nav>
+  <h3 class="head"><center>MEDREC</center></h3>
   <br>
   <div class = "container">
-    <h1> Hello {{name1}} <h1>
+    <h2> Hello {{name1}} <h2>
   </div>
-<div class = "buts">
-<br>
+  <div class = "buts">
+    <br>
       <form method="POST">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name = "records" value = "records">Make an appointment</button>
 
@@ -28,30 +24,30 @@
 
        
       </form>
-</div>
-<div class="logout">
-  <form action = "http://localhost:5000/" method = 'GET'>
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name = "back" value = "back">LOGOUT</button>
-  </form>
-</div>
-<center><h2>Your Medical History</h2></center><br><br>
+  </div>
+  <div class="logout">
+    <form action = "http://localhost:5000/" method = 'GET'>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name = "back" value = "back">LOGOUT</button>
+    </form>
+  </div>
+  <center><h3>Your Medical History</h3></center><br><br>
 
-<center>
-  <table border="1" cellpadding = "5" cellspacing = "5">
-    <tr>
-      <td><b><h5> Doctor</h5> </b></td>
-      <td><b><h5> Description</h5> </b> </td>
-      <td><b><h5> Date </h5></b></td></tr>
-{% for emp in data %}
-<tr>
-  <td>{{ emp['doctor'] }}</td></h4>
-  <td>{{ emp['description'] }}</td></h4>
-  <td>{{ emp['year'] }}</td></h4>
-</tr>
-{% endfor %}
+  <center>
+    <table border="1" cellpadding = "5" cellspacing = "5">
+      <tr>
+        <td><b><h5> Doctor</h5> </b></td>
+        <td><b><h5> Description</h5> </b> </td>
+        <td><b><h5> Date </h5></b></td></tr>
+        {% for emp in data %}
+      <tr>
+        <td>{{ emp['doctor'] }}</td></h4>
+        <td>{{ emp['description'] }}</td></h4>
+      <td>{{ emp['year'] }}</td></h4>
+      </tr>
+        {% endfor %}
 
-</table>
-</center>
+    </table>
+  </center>
 
 </body>
 </html>

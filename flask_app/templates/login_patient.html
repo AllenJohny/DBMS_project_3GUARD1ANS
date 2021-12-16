@@ -9,24 +9,23 @@
 <link rel="stylesheet" href="{{url_for('static',filename = "style.css")}}">
 </head>
 <body class = "body">
+  <h1 class="head"><center>WELCOME</center></h1>
 
   <div class = "container">
-    <br>
+  
 
-    <br>
-    <h1> WELCOME TO MEDREC!! </h1>
-    <hr color = "#7FFFD4">
 
     <div class = "split left">
       <div class = "centered">
-        <h2> Already have an account? </h2>
+        <h2>Login</h2>
+        <br>
         <form method = "POST">
-          USERNAME:<br>
+          <p><b>Username:</b></p>
           <input type="text" class = "form-control" name="username">
           <br>
-          PASSWORD:<br>
+          <p><b>Password:</b></p>
           <input type="password" class = "form-control" name="password">
-          <br><br>
+          <br>
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name = "signin1" value = "signin1">sign in </button>
         </form>
       </div>
@@ -36,26 +35,27 @@
       <div class = "vr"></div>
       <div class = "centered">
 
-        <h2> Are you a new user ? </h2>
+        <h2>Sign Up</h2>
+        <br>
     <form method = "POST">
 
-      FIRST NAME:<br>
+      <p><b>First Name:</b></p>
       <input type="text" class = "form-control" name="name">
-
-      SURNAME:<br>
+      
+      <p><b>Surname:</b></p>
       <input type="text" class = "form-control" name="sname">
-
-      EMAIL ID:<br>
+      
+      <p><b>Email Id:</b></p>
       <input type="text" class = "form-control" name="email">
+      
 
-
-      PHONE NUMBER:<br>
+      <p><b>Phone Number:</b></p>
       <input type="text" class = "form-control" name="phone">
-
-      USERNAME:<br>
+      
+      <p><b>Username:</b></p>
       <input type="text" class = "form-control" name="username_new">
-
-      PASSWORD:<br>
+      
+      <p><b>Password:</b></p>
       <input type="password" class = "form-control" name="password_new">
 
       <br>
