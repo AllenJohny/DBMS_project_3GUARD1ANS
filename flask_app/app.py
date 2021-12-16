@@ -34,23 +34,23 @@ def homepage():
     return render_template('homepage.html')
 
 
-@app.route('/home',methods=['GET','POST'])
-def main():
-     global task
-     if request.method=='POST':
-          if request.form.get('DOCTOR')=='DOCTOR':
-             task = 1
-             return redirect(url_for('login'))
+#@app.route('/home',methods=['GET','POST'])
+#def main():
+#     global task
+#     if request.method=='POST':
+#          if request.form.get('DOCTOR')=='DOCTOR':
+#             task = 1
+ #            return redirect(url_for('login'))
+#
+
+ #         elif request.form.get('PATIENT')=='PATIENT':
+ #             task = 2
+ #             return redirect(url_for('patient'))
 
 
-          elif request.form.get('PATIENT')=='PATIENT':
-              task = 2
-              return redirect(url_for('patient'))
-
-
-     elif request.method=='GET':
-          return render_template('index.html')
-     print('hello')
+#     elif request.method=='GET':
+#          return render_template('index.html')
+#     print('hello')
 
 
 
@@ -241,18 +241,18 @@ def seedata():
     if task_doc==3:
         return render_template('see_data.html' , data2 = data2)
 
-@app.route('/addmedical',methods = ['GET','POST'])
-def addmedical():
-    if task_pat==1:
-        if request.method=='POST':
-            if request.form.get('data')=='data':
-                disease = request.form['disease']
-                mont = request.form['mont']
-                year = request.form['saal']
-                post = {'patient':user_p , 'disease':disease , 'month':mont , 'year':year}
-                postID = db.medical_history.insert_one(post).inserted_id
-        return render_template('add_data.html')
-    return render_template('add_medicalHistory.html')
+#@app.route('/addmedical',methods = ['GET','POST'])
+#def addmedical():
+#    if task_pat==1:
+#        if request.method=='POST':
+#            if request.form.get('data')=='data':
+#                disease = request.form['disease']
+#                mont = request.form['mont']
+#                year = request.form['saal']
+ #               post = {'patient':user_p , 'disease':disease , 'month':mont , 'year':year}
+#                postID = db.medical_history.insert_one(post).inserted_id
+#        return render_template('add_data.html')
+#    return render_template('add_medicalHistory.html')
 
 @app.route('/seeappoint',methods = ['GET','POST'])
 def seeappoint():
@@ -292,17 +292,17 @@ def delappoint_doc():
 
 
 
-@app.route('/seedoc',methods = ['GET','POST'])
-def seedoc():
-    if task_pat==3:
-        data4 = db.treats.find({"patient":user_p})
-        if request.method=='POST':
-            if request.form.get('adddoc')=='adddoc':
-                doc = request.form['doname']
-                post = {'doc':doc , 'patient':user_p}
-                postID = db.treats.insert_one(post).inserted_id
-            return render_template('seedoc.html',data4 = data4)
-        return render_template('seedoc.html',data4 = data4)
+#@app.route('/seedoc',methods = ['GET','POST'])
+#def seedoc():
+#    if task_pat==3:
+#        data4 = db.treats.find({"patient":user_p})
+ #       if request.method=='POST':
+ #           if request.form.get('adddoc')=='adddoc':
+ #               doc = request.form['doname']
+ #               post = {'doc':doc , 'patient':user_p}
+ #               postID = db.treats.insert_one(post).inserted_id
+ #           return render_template('seedoc.html',data4 = data4)
+#        return render_template('seedoc.html',data4 = data4)
 
 
 if __name__=='__main__':

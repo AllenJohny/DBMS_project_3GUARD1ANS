@@ -16,10 +16,11 @@
 
   </nav>
 
-  <center><h2>YOUR APPOINTMENTS</h2></center><br><br>
+  <center><h2>APPOINTMENTS</h2></center><br><br>
 
   <center>
-    <table border="1" cellpadding = "5" cellspacing = "5">
+    <div class = "vdr"></div>
+    <table border="5" cellpadding = "30" cellspacing = "30">
       <tr>
         <td><b><h5> PATIENT</h5> </b></td>
         <td><b><h5> DATE</h5> </b> </td>
@@ -34,6 +35,7 @@
   {% endfor %}
 
   <form method="POST">
+  <div class = 'lt'>
   ENTER PATIENT NAME:<br>
   <input type="text" class = "form-control" name="patient">
   <br>
@@ -45,16 +47,14 @@
   ENTER DATE:<br>
   <input type="text" class = "form-control" name="date">
   <br>
- 
-  <button class="red" type="submit" name = "del" value = "del">Delete appointment</button>
+ </div>
+  <button class="red" type="submit" name = "del" value = "del">DELETE APPOINTMENT</button>
   </form>
 
   </table>
   </center>
-<div class="centered">
   <form action = "http://localhost:5000/doctorhome" method = 'POST'>
     <button class="back" type="submit" name = "back" value = "back">BACK </button>
   </form>
-</div>
 </body>
 </html>
