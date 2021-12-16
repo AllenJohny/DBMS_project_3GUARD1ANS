@@ -148,6 +148,11 @@ nav .menu{
 }
 
 .red {
+  position: absolute;
+  bottom: 15%;
+  left:13%;
+  width: 140px;
+  height: 75px;
   color: rgb(172, 6, 6);
   background-color: rgb(252, 252, 252);
   border-radius: 5px;
@@ -160,7 +165,7 @@ nav .menu{
 
 .logout{
   position: absolute;
-  bottom: 0%;
+  bottom: 10%;
   left: 80%;
   color: #08eb1b;
   background-color: ghostwhite;
@@ -176,4 +181,47 @@ nav .menu{
   left: 60%;
   transform: translate(-5%, -5%);
   text-align: center;
+}
+
+.back {
+  position: absolute;
+  bottom: 15%;
+  left:75%;
+  width: 140px;
+  height: 75px;
+  border-radius: 5px;
+  color: #4caf50;
+  background-color: rgb(252, 251, 250);
+}
+
+.back:hover{
+  background-color: #4caf50;
+  color: rgb(252, 251, 250);
+
+}
+
+.lt {
+  position: absolute;
+  top:40%;
+  right:63%;
+  transform: translate(-90%, -30%);
+  text-align: center;
+}
+
+.rt {
+  position: absolute;
+  top:40%;
+  right:20%;
+  transform: translate(-90%, -30%);
+  text-align: center;
+
+}
+
+.vdr {
+  width:5px;
+  top : 12%;
+  bottom :0;
+  background-color: #24c01f;
+  position: absolute;
+  left: 500px;
 }

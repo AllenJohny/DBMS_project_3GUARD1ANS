@@ -34,23 +34,23 @@ def homepage():
     return render_template('homepage.html')
 
 
-@app.route('/home',methods=['GET','POST'])
-def main():
-     global task
-     if request.method=='POST':
-          if request.form.get('DOCTOR')=='DOCTOR':
-             task = 1
-             return redirect(url_for('login'))
+#@app.route('/home',methods=['GET','POST'])
+#def main():
+#     global task
+#     if request.method=='POST':
+#          if request.form.get('DOCTOR')=='DOCTOR':
+#             task = 1
+ #            return redirect(url_for('login'))
+#
+
+ #         elif request.form.get('PATIENT')=='PATIENT':
+ #             task = 2
+ #             return redirect(url_for('patient'))
 
 
-          elif request.form.get('PATIENT')=='PATIENT':
-              task = 2
-              return redirect(url_for('patient'))
-
-
-     elif request.method=='GET':
-          return render_template('index.html')
-     print('hello')
+#     elif request.method=='GET':
+#          return render_template('index.html')
+#     print('hello')
 
 
 
@@ -159,6 +159,9 @@ def doctorhome():
         if request.form.get('see_medical_data')=='see_medical_data':
             task_doc=3
             return redirect(url_for('searchp'))
+        if request.form.get('delete')=='delete':
+            task_doc=4
+            return redirect(url_for('delappoint_doc'))
     return render_template('doctor_home.html',name1 =nam , data1 = data1)
 
 
@@ -238,18 +241,18 @@ def seedata():
     if task_doc==3:
         return render_template('see_data.html' , data2 = data2)
 
-@app.route('/addmedical',methods = ['GET','POST'])
-def addmedical():
-    if task_pat==1:
-        if request.method=='POST':
-            if request.form.get('data')=='data':
-                disease = request.form['disease']
-                mont = request.form['mont']
-                year = request.form['saal']
-                post = {'patient':user_p , 'disease':disease , 'month':mont , 'year':year}
-                postID = db.medical_history.insert_one(post).inserted_id
-        return render_template('add_data.html')
-    return render_template('add_medicalHistory.html')
+#@app.route('/addmedical',methods = ['GET','POST'])
+#def addmedical():
+#    if task_pat==1:
+#        if request.method=='POST':
+#            if request.form.get('data')=='data':
+#                disease = request.form['disease']
+#                mont = request.form['mont']
+#                year = request.form['saal']
+ #               post = {'patient':user_p , 'disease':disease , 'month':mont , 'year':year}
+#                postID = db.medical_history.insert_one(post).inserted_id
+#        return render_template('add_data.html')
+#    return render_template('add_medicalHistory.html')
 
 @app.route('/seeappoint',methods = ['GET','POST'])
 def seeappoint():
@@ -257,28 +260,49 @@ def seeappoint():
         data3 = db.appointment.find({"patient":nam})
         if request.method=='POST':
             if request.form.get('delete')=='delete':
-                doctor=request.form['doctor']
-                date=request.form['date']
-                time=request.form['time']
-                db.appoinment.deleteOne({"doctor":doctor,"date":date,"time":time})
+                return redirect(url_for('delappoint'))                
         return render_template('see_appoint_pat.html',data3 = data3)
 
 
 
-
-
-
-@app.route('/seedoc',methods = ['GET','POST'])
-def seedoc():
-    if task_pat==3:
-        data4 = db.treats.find({"patient":user_p})
+@app.route('/delappoint',methods=['GET','POST'])
+def delappoint():
+    if task_pat==2:
+        data3 = db.appointment.find({"patient":nam})
         if request.method=='POST':
-            if request.form.get('adddoc')=='adddoc':
-                doc = request.form['doname']
-                post = {'doc':doc , 'patient':user_p}
-                postID = db.treats.insert_one(post).inserted_id
-            return render_template('seedoc.html',data4 = data4)
-        return render_template('seedoc.html',data4 = data4)
+            if request.form.get('del')=='del':
+                doctor=request.form['doctor']
+                date=request.form['date']
+                time=request.form['time']
+                db.appointment.delete_one({"doctor":doctor,"patient":nam,"date":date,"time":time})
+        return render_template('del_appoint_pat.html',data3 = data3)
+
+@app.route('/delappoint_doc',methods=['GET','POST'])
+def delappoint_doc():
+    if task_doc==4:
+        data1 = db.appointment.find({"doctor":nam})
+        if request.method=='POST':
+            if request.form.get('del')=='del':
+                patient=request.form['patient']
+                date=request.form['date']
+                time=request.form['time']
+                db.appointment.delete_one({"doctor":nam,"patient":patient,"date":date,"time":time})
+        return render_template('del_appoint_doc.html',data1 = data1)
+
+
+
+
+#@app.route('/seedoc',methods = ['GET','POST'])
+#def seedoc():
+#    if task_pat==3:
+#        data4 = db.treats.find({"patient":user_p})
+ #       if request.method=='POST':
+ #           if request.form.get('adddoc')=='adddoc':
+ #               doc = request.form['doname']
+ #               post = {'doc':doc , 'patient':user_p}
+ #               postID = db.treats.insert_one(post).inserted_id
+ #           return render_template('seedoc.html',data4 = data4)
+#        return render_template('seedoc.html',data4 = data4)
 
 
 if __name__=='__main__':

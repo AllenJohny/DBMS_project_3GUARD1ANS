@@ -16,28 +16,44 @@
 
   </nav>
 
-  <center><h2>YOUR APPOINTMENTS</h2></center><br><br>
+  <center><h2>APPOINTMENTS</h2></center><br><br>
 
   <center>
-    <table border="2" cellpadding = "8" cellspacing = "8">
+    <div class = "vdr"></div>
+    <table border="5" cellpadding = "30" cellspacing = "30">
       <tr>
-        <td><b><h5> DOCTOR</h5> </b></td>
+        <td><b><h5> PATIENT</h5> </b></td>
         <td><b><h5> DATE</h5> </b> </td>
         <td><b><h5> TIME</h5> </b> </td>
-  {% for emp in data3 %}
+  {% for emp in data1 %}
     <tr>
-    <td>{{ emp['doctor'] }}</td></h4>
+    <td>{{ emp['patient'] }}</td></h4>
     <td>{{ emp['date'] }}</td></h4>
     <td>{{ emp['time'] }}</td></h4>  
+    </td>
     </tr>
   {% endfor %}
 
-  <form method='POST'><button class="red" type="submit" name = "delete" value = "delete">DELETE APPOINTMENT</button>
+  <form method="POST">
+  <div class = 'lt'>
+  ENTER PATIENT NAME:<br>
+  <input type="text" class = "form-control" name="patient">
+  <br>
+
+  ENTER TIME:<br>
+  <input type="text" class = "form-control" name="time">
+  <br>
+
+  ENTER DATE:<br>
+  <input type="text" class = "form-control" name="date">
+  <br>
+ </div>
+  <button class="red" type="submit" name = "del" value = "del">DELETE APPOINTMENT</button>
   </form>
 
   </table>
-</center>
-  <form action = "http://localhost:5000/patienthome" method = 'POST'>
+  </center>
+  <form action = "http://localhost:5000/doctorhome" method = 'POST'>
     <button class="back" type="submit" name = "back" value = "back">BACK </button>
   </form>
 </body>

@@ -46,13 +46,16 @@
     <td>{{ emp['patient'] }}</td></h4>
     <td>{{ emp ['date']  }}</td></h4>
     <td>{{ emp['time'] }}</td></h4>
-    <td><button class="red" type="submit" name = "delete" value = "delete">Delete appoinment</button>
-    </td>
   </tr>
   {% endfor %}
+  
 
   </table>
   </center>
+  
+  <form method='POST'><button class="red" type="submit" name = "delete" value = "delete">Delete appointment</button>
+  </form>
+  
 
 </body>
 </html>
