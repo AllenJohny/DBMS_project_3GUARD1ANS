@@ -1,7 +1,7 @@
 # **Overview**
 ### A web application where a person logs in as either a patient or doctor after which depending on the person provide some options to make appoinments, see medical history etc.
 
-
+![FLOWCHART](assets/flowchart.jpeg )
 
 # **Front-end**
 ### Each of the given pages are present in the application albeit based on the user some functions will be different.
