@@ -1,0 +1,58 @@
+<html lang ="en">
+
+<head>
+  <title>MEDREC</title>
+  <meta charset = "utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="short description of this html page">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ url_for ('static' , filename='style.css')}}">
+</head>
+
+<body>
+  <h3 class="head"><center>MEDREC</center></h3>
+  <br>
+
+  <center><h2>Appointments</h2></center><br><br>
+
+  <center>
+    <table border="1" cellpadding = "5" cellspacing = "5">
+      <tr>
+        <td><p><b>Patient</b></p></td>
+        <td><p><b>Date</b></p></td>
+        <td><p><b>Time</b></p></td>
+  {% for emp in data1 %}
+    <tr>
+    <td>{{ emp['patient'] }}</td></h4>
+    <td>{{ emp['date'] }}</td></h4>
+    <td>{{ emp['time'] }}</td></h4>  
+    </td>
+    </tr>
+  {% endfor %}
+
+  <form method="POST">
+  <p><b>Enter the Patient Name</b></p>
+  <input type="text" class = "form-control" name="patient">
+  <br>
+
+  <p><b>Enter Time</b></p>
+  <input type="text" class = "form-control" name="time">
+  <br>
+
+  <p><b>Enter Date</b></p>
+  <input type="text" class = "form-control" name="date">
+  <br>
+ 
+  <button class="red" type="submit" name = "del" value = "del">Delete appointment</button>
+  </form>
+
+  </table>
+  </center>
+
+  <form action = "http://localhost:5000/doctorhome" method = 'POST'>
+    <button class="back" type="submit" name = "back" value = "back">BACK </button>
+  </form>
+
+
+</body>
+</html>

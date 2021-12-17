@@ -1,0 +1,68 @@
+<html lang ="en">
+
+<head>
+  <title>MEDREC</title>
+  <meta charset = "utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="short description of this html page">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="{{url_for('static',filename = "style.css")}}">
+</head>
+<body class = "body">
+  <h1 class="head"><center>WELCOME</center></h1>
+
+  <div class = "container">
+  
+
+
+    <div class = "split left">
+      <div class = "centered">
+        <h2>Login</h2>
+        <br>
+        <form method = "POST">
+          <p><b>Username:</b></p>
+          <input type="text" class = "form-control" name="username">
+          <br>
+          <p><b>Password:</b></p>
+          <input type="password" class = "form-control" name="password">
+          <br>
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name = "signin1" value = "signin1">sign in </button>
+        </form>
+      </div>
+    </div>
+
+    <div class = "split right">
+      <div class = "vr"></div>
+      <div class = "centered">
+
+        <h2>Sign Up</h2>
+        <br>
+    <form method = "POST">
+
+      <p><b>First Name:</b></p>
+      <input type="text" class = "form-control" name="name">
+      
+      <p><b>Surname:</b></p>
+      <input type="text" class = "form-control" name="sname">
+      
+      <p><b>Email Id:</b></p>
+      <input type="text" class = "form-control" name="email">
+      
+
+      <p><b>Phone Number:</b></p>
+      <input type="text" class = "form-control" name="phone">
+      
+      <p><b>Username:</b></p>
+      <input type="text" class = "form-control" name="username_new">
+      
+      <p><b>Password:</b></p>
+      <input type="password" class = "form-control" name="password_new">
+
+      <br>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name = "signup" value = "signup">sign up </button>
+    </form>
+</div>
+</div>
+  </div>
+</body>
+</html>

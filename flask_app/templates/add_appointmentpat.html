@@ -1,0 +1,59 @@
+<html lang ="en">
+
+<head>
+  <title>MEDREC</title>
+  <meta charset = "utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="short description of this html page">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="{{url_for('static',filename = "style.css")}}">
+</head>
+<body class = "body">
+
+  <h3 class="head"><center>MEDREC</center></h3>
+  <br>
+  <center><h4>Availabilities</h4></center><br>
+
+  <center>
+    <table border="1" cellpadding = "5" cellspacing = "5">
+      <tr>
+        <td><p><b>Doctor</b></p></td>
+        <td><p><b>Specialization</b></p></td>
+        <td><p><b>Availability</b></p></td>
+        <td><p><b>Time</b></p></td> 
+         {% for emp in data4 %}
+  <tr>
+    <td>{{ emp['doctor'] }}</td></h4>
+    <td>{{ emp['spec'] }}</td></h4>
+    <td>{{ emp ['status']  }}</td></h4>
+    <td>{{ emp['time'] }}</td></h4>
+  </tr>
+  {% endfor %}
+
+  </table>
+  <br>
+<div>
+<form method = 'POST'>
+  <p><b>Name of the Doctor</b></p>
+  <input type="text" class = "form-control" name="naam">
+  <br>
+  <p><b>Date</b></p>
+  <input type="text" class = "form-control" name="date">
+  <br>
+  <p><b>Time</b></p>
+  <input type="text" class = "form-control" name="time">
+  <br>
+
+  <br>
+  <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name = "appoint" value = "appoint">MAKE APPOINTMENT </button>
+  
+</form>
+<br>
+<form action = "http://localhost:5000/patienthome" method = 'POST'>
+  <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name = "back" value = "back">BACK </button>
+</form>
+
+</div>
+</center>
+</body>
+</html>
