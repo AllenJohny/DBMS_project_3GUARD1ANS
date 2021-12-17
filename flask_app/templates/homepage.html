@@ -18,24 +18,24 @@
         </div>
         <ul >
             <li><a href="/">Home</a></li>
-            <li><a href="about.txt" target="_blank">About</a></li>
-            <li><a href="Contact">Contact</a></li>
+            <li><a href="{{url_for('about')}}">About</a></li>
+            <li><a href="{{url_for('contact')}}">Contact</a></li>
         </ul>
     </div>
-</nav>
-  <h1 class="heading" style = "font-size:04vw"><center>WELCOME TO MEDREC</center></h1>
- <h1> <p class="desc">Access your medical records ANYWHERE and ANYTIME !</p></h1>
+  </nav>
+  <h2 class="heading"><center>WELCOME TO MEDREC</center></h2>
+ <p class="desc">A portal where you can book appointments, check your medical history at the comfort of your hands</p>
     <form action="http://localhost:5000/patient" method = 'POST'>
       <div class = "patient">
         <button class="btn btn-outline-success my-2 my-sm-0" name = "PATIENT" value = 'PATIENT' type="submit">Login/Signup</button>
       </div>
     </form>
 
-    <h2><p class="doc">Doctor?</p></h2>
+    <p class="doc">Doctor?</p>
+    <form action="http://localhost:5000/login" method="POST">
     <div class="foot">
-     
-      <form action="http://localhost:5000/login" method="POST">
-        <button class="btn btn-outline-success my-2 my-sm-0" name = "DOCTOR" value = "DOCTOR" type="submit" >Login</button>
+      
+        <button class="btn btn-outline-success btn-sm" name = "DOCTOR" value = "DOCTOR" type="submit" >Login</button>
       </form>
     </div>
 </body>

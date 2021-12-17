@@ -10,20 +10,18 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-    <!-- Brand -->
-    <a class="navbar-brand" href="#">MEDREC</a>
+  <h3 class="head"><center>MEDREC</center></h3>
 
   </nav>
 
-  <center><h2>YOUR APPOINTMENTS</h2></center><br><br>
+  <center><h3>Appointments</h3></center><br>
 
   <center>
     <table border="2" cellpadding = "8" cellspacing = "8">
       <tr>
-        <td><b><h5> DOCTOR</h5> </b></td>
-        <td><b><h5> DATE</h5> </b> </td>
-        <td><b><h5> TIME</h5> </b> </td>
+        <td><p><b>Doctor</b></p></td>
+        <td><p><b>Date</b></p></td>
+        <td><p><b>Time</b></p></td>
   {% for emp in data3 %}
     <tr>
     <td>{{ emp['doctor'] }}</td></h4>
